@@ -1,0 +1,50 @@
+body {
+  padding: 40px;
+  font-size: 18px;
+}
+#main {
+  display: flex;
+  gap: 20px;
+}
+#container {
+  flex: 0px 3 3;
+}
+#controls {
+  margin-top: 20px;
+  flex: 0px 1 1;
+}
+#plotContainer > div {
+  display: inline-block;
+  position: relative;
+}
+#plotContainer canvas {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  height: 400px;
+  z-index: -1;
+}
+[type="range"] {
+  width: 100%;
+}
+button {
+  width: 80px;
+}
+.colorStep {
+  display: inline-block;
+  height: 80px;
+  width: 2px;
+}
+.colorPicker {
+  display: flex;
+  margin: 20px 0;
+}
+.colorPicker > .lambdaInput {
+  flex: 50px 0 0;
+  margin-right: 2px;
+}
+.colorPicker > .colorInput {
+  flex: 0px 3 3;
+  margin-left: 10px;
+}
