@@ -55,7 +55,13 @@ interpolators.forEach((interp) => {
   colorSpaces.append(button);
 });
 
-colorPickerGroup.oninput = render;
+colorPickerGroup.oninput = (e) => {
+  if (e.target.classList.contains("lambdaInput")) {
+    e.target.closest(".colorPicker").querySelector(".lambdaValue").textContent =
+      e.target.value + " nm";
+  }
+  render();
+};
 
 presetBtn1.onclick = () => {
   presetBtn1.disabled = true;
@@ -85,6 +91,7 @@ function usePreset(preset) {
   preset.forEach(([peak, color]) => {
     const el = colorPickerTemplate.content.children[0].cloneNode(true);
     el.querySelector(".lambdaInput").value = peak;
+    el.querySelector(".lambdaValue").textContent = peak + " nm";
     el.querySelector(".colorInput").value = color;
     colorPickerGroup.append(el);
     render();
@@ -183,4 +190,5 @@ function render() {
 }
 
 window.render = render;
-render();
+presetBtn1.disabled = true;
+usePreset(YRMBC);

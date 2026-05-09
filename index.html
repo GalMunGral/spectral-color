@@ -6,10 +6,10 @@
 <body>
   <div id="main">
     <div id="container">
-      <h4>Method 1: Integration of Color Matching Functions</h4>
+      <h4>Method 1 — CIE Color Matching Function Integration</h4>
       <div id="absorbed"></div>
       <div id="perceivedIntegrated"></div>
-      <h4>Method 2: Piecewise Linear Interpolation</h4>
+      <h4>Method 2 — Piecewise Linear Interpolation in Color Space</h4>
       <div id="perceivedInterpolated"></div>
       <div id="plotContainer">
         <div class="lab">
@@ -23,8 +23,8 @@
       </div>
     </div>
     <div id="controls">
-      <h4>Method 1</h4>
-      <h5>Standard Deviation</h5>
+      <h4>CIE Integration</h4>
+      <h5>Absorption bandwidth (σ)</h5>
       <input
         id="sigmaControl"
         type="range"
@@ -33,7 +33,7 @@
         value="75"
         style="margin-right: 10px"
       />
-      <h4>Method 2</h4>
+      <h4>Interpolation</h4>
       <h5>Color Space</h5>
       <div id="colorSpaces"></div>
       <h5>Color Stops</h5>
@@ -45,14 +45,10 @@
       <div id="colorPickerGroup"></div>
       <h4>Plots</h4>
       <div>
-        <input type="checkbox" id="checkbox1" oninput="render()" /><label
-          >Method 1</label
-        >
+        <input type="checkbox" id="checkbox1" oninput="render()" checked /><label>CIE Integration</label>
       </div>
       <div>
-        <input type="checkbox" id="checkbox2" oninput="render()" /><label
-          >Method 2</label
-        >
+        <input type="checkbox" id="checkbox2" oninput="render()" checked /><label>Interpolation</label>
       </div>
       <h5>Lightness (L)</h5>
       <input
@@ -67,8 +63,8 @@
     </div>
     <template id="colorPickerTemplate">
       <div class="colorPicker">
-        <input type="number" class="lambdaInput" />
-        <span>nm</span>
+        <input type="range" class="lambdaInput" min="380" max="700" />
+        <span class="lambdaValue"></span>
         <input type="color" class="colorInput" />
       </div>
     </template>

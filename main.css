@@ -4,32 +4,37 @@
 
 body {
   margin: 0;
-  padding: 32px 40px;
+  padding: 48px 120px;
   font-size: 15px;
   font-family: ui-sans-serif, system-ui, sans-serif;
   color: #1a1a1a;
-  background: #f8f8f8;
+  background: #f0f0f2;
+  min-height: 100vh;
 }
 
 h4 {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #888;
-  margin: 20px 0 8px;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  margin: 24px 0 6px;
+}
+
+h4:first-child {
+  margin-top: 0;
 }
 
 h5 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  color: #555;
-  margin: 14px 0 6px;
+  color: #666;
+  margin: 12px 0 4px;
 }
 
 #main {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   align-items: flex-start;
 }
 
@@ -40,13 +45,13 @@ h5 {
 
 #controls {
   flex: 1 1 0px;
-  min-width: 200px;
+  min-width: 220px;
   background: white;
   border: 1px solid #e8e8e8;
-  border-radius: 10px;
-  padding: 16px 20px;
+  border-radius: 12px;
+  padding: 20px 24px 24px;
   position: sticky;
-  top: 32px;
+  top: 48px;
 }
 
 #plotContainer > div {
@@ -108,30 +113,28 @@ button:disabled {
 }
 
 .colorPicker {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 8px;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .colorPicker > .lambdaInput {
-  width: 56px;
-  flex-shrink: 0;
-  padding: 4px 6px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 13px;
+  accent-color: #555;
 }
 
-.colorPicker > span {
+.colorPicker > .lambdaValue {
   font-size: 12px;
   color: #888;
+  width: 48px;
+  text-align: right;
   flex-shrink: 0;
 }
 
 .colorPicker > .colorInput {
-  flex: 1 1 0px;
-  height: 30px;
+  width: 36px;
+  height: 28px;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 2px;
@@ -155,5 +158,5 @@ div:has(> input[type="checkbox"]) {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 6px 0;
+  margin: 8px 0;
 }
